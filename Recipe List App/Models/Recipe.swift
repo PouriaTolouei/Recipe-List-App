@@ -17,6 +17,7 @@ class Recipe: Identifiable, Decodable {
     var cookTime: String
     var totalTime: String
     var servings: Int
-    var ingredients: [String] = [String]()
-    var directions: [String] = [String]()
+    var highlights: [String]
+    var ingredients: [Ingredient]
+    var directions: [String]
 }
