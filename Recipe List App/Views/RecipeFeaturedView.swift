@@ -64,7 +64,6 @@ struct RecipeFeaturedView: View {
                 Text("Healthy, Hearty")
             }
             .padding([.leading, .bottom])
-            .padding(.bottom)
         }
     }
 }
