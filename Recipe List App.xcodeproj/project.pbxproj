@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1A43E42877F0E800E83395 /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A43E32877F0E800E83395 /* Rational.swift */; };
 		3A43869528719B9D00CDDE9D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A43869428719B9D00CDDE9D /* Ingredient.swift */; };
 		3A69654B28699B5700E4E1DC /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A69654A28699B5700E4E1DC /* RecipeDetailView.swift */; };
 		3A9F7F1A286844A90005766F /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F7F19286844A90005766F /* recipes.json */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1A43E32877F0E800E83395 /* Rational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
 		3A43869428719B9D00CDDE9D /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		3A69654A28699B5700E4E1DC /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		3A9F7F19286844A90005766F /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
@@ -48,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1A43E22877F0A300E83395 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3A1A43E32877F0E800E83395 /* Rational.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		3A9F7F142868412B0005766F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 				3A9F7F16286841440005766F /* Models */,
 				3A9F7F182868418E0005766F /* Services */,
 				3A9F7F17286841720005766F /* Data */,
+				3A1A43E22877F0A300E83395 /* Utilities */,
 				3AD54C7528683459005062D9 /* Assets.xcassets */,
 				3AD54C7728683459005062D9 /* Preview Content */,
 			);
@@ -209,6 +220,7 @@
 				3A43869528719B9D00CDDE9D /* Ingredient.swift in Sources */,
 				3ADE104128743F41009F5E83 /* RecipeFeaturedView.swift in Sources */,
 				3AD54C7228683457005062D9 /* Recipe_List_App.swift in Sources */,
+				3A1A43E42877F0E800E83395 /* Rational.swift in Sources */,
 				3A9F7F2028684DAC0005766F /* DataService.swift in Sources */,
 				3ABF1ACE2870295C00A44BBD /* RecipeTabView.swift in Sources */,
 			);
