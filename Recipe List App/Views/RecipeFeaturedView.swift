@@ -10,8 +10,8 @@ import SwiftUI
 struct RecipeFeaturedView: View {
     
     @EnvironmentObject var model: RecipeModel
-    
     @State var isDetailViewShowing = false
+    @State var tabSelectionIndex = 0
     
     var body: some View {
         
@@ -25,7 +25,7 @@ struct RecipeFeaturedView: View {
                 
             GeometryReader { geo in
                 
-                TabView {
+                TabView(selection: $tabSelectionIndex) {
                     
                     // Loops through each recipe
                     ForEach(0..<model.recipes.count) { i in
@@ -56,6 +56,7 @@ struct RecipeFeaturedView: View {
                                     }
                                 }
                             }
+                            .tag(i)
                             .sheet(isPresented: $isDetailViewShowing) {
                                 
                                 // Show the recipe DetailView
@@ -75,16 +76,29 @@ struct RecipeFeaturedView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("Preperation Time:")
                     .font(.headline)
-                Text("1 hour")
+                Text(model.recipes[tabSelectionIndex].prepTime)
                 Text("Highlights:")
                     .font(.headline)
-                Text("Healthy, Hearty")
+                RecipeHighlights(highlights: model.recipes[tabSelectionIndex].highlights)
             }
             .padding([.leading, .bottom])
         }
+        .onAppear {
+            setFeaturedIndex()
+        }
+    }
+    
+    func setFeaturedIndex() {
+        
+        // Find the index of first recipe that's featured
+        let index = model.recipes.firstIndex { recipe in
+            return recipe.featured
+        }
+        
+        tabSelectionIndex = index ?? 0
     }
 }
-
+ 
 struct RecipeFeaturedView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeFeaturedView()
