@@ -28,7 +28,7 @@ struct RecipeFeaturedView: View {
                 TabView(selection: $tabSelectionIndex) {
                     
                     // Loops through each recipe
-                    ForEach(0..<model.recipes.count) { i in
+                    ForEach(0..<model.recipes.count, id: \.self) { i in
                         
                         // Only show those that should be featured
                         if model.recipes[i].featured {
@@ -58,11 +58,6 @@ struct RecipeFeaturedView: View {
                                 }
                             }
                             .tag(i)
-                            .sheet(isPresented: $isDetailViewShowing) {
-                                
-                                // Show the recipe DetailView
-                                RecipeDetailView(recipe: model.recipes[i])
-                            }
                             .buttonStyle(PlainButtonStyle())
                             .frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: .center)
                             .cornerRadius(15)
@@ -72,6 +67,11 @@ struct RecipeFeaturedView: View {
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                .sheet(isPresented: $isDetailViewShowing) {
+                    
+                    // Show the recipe DetailView
+                    RecipeDetailView(recipe: model.recipes[tabSelectionIndex])
+                }
             }
             
             VStack(alignment: .leading, spacing: 10) {
